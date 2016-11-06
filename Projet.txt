@@ -1,0 +1,16 @@
+#### Creative coding
+
+### _Titre ?_ **Cartographie Subjective**
+
+Projet autour de la cartographie subjective (de la ville de Geneve(?))
+
+#### Librairie Particles for P5 + http://overpass-turbo.eu api. (issus de openstreet map)
+
+
+
+savicic@hesge.ch avec un PDF (ou lien) vers un premier document avec
+les éléments suivants:
+- Titre
+- Description écrite de l’idée
+- Premières étapes (Documentation, Image, Croquis, Code, etc..)
+- Liens vers des projets ou références d’inspirations
