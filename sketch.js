@@ -17,5 +17,5 @@ function drawData(data) {
 
   print(data);
   print("chargé");
-
+print(data[104].lat)
 }
