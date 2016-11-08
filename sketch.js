@@ -35,8 +35,8 @@ var mappedY;
     print(latitude,longitude);
     print(texte);
 
-    mappedX = map(latitude,46.1,46.3,0,width);
-    mappedY = map(longitude,6.1,6.2,0,height);
+    mappedX = map(latitude-46,0.15,0.29,0,width);
+    mappedY = map(longitude-6,0.11,0.20,0,height);
 
 
     ellipse(mappedX,mappedY,5,5);
