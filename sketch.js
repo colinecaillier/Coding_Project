@@ -4,7 +4,7 @@ function setup() {
     loadJSON(url,drawData);
 
     print("///Setting Up///");
-
+    background(255);
 
 }
 
@@ -25,23 +25,26 @@ var mappedY;
   print(latitude);
   print(longitude);
 
-  for (var i = 0 ; i < object.length; i++){
+  for (i = 0 ; i < object.length; i++){
+
     var latitude = object[i].lat;
     var longitude = object[i].lon;
-    var texte = object[i].tags.amenity;
 
+    var texte = object[i].tags.amenity;
     print(i);
     print(latitude,longitude);
     print(texte);
+
+    mappedX = map(latitude,46.1,46.3,0,width);
+    mappedY = map(longitude,6.1,6.2,0,height);
+
+
+    ellipse(mappedX,mappedY,5,5);
+    stroke(0);
+
+
+
   }
-
-   mappedX = map(latitude,0, width,45,47);
-   mappedY= map(longitude,0,height, 5, 8);
-
-
-   text(texte,mappedX,mappedY);
-   fill(255);
-       textSize(15);
 
 
 
