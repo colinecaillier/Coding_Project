@@ -16,16 +16,33 @@ function draw() {
 
 function drawData(data) {
 var object = data.elements;
-var counter = counter;
-var i ;
-  i = 0;
+var mappedX;
+var mappedY;
 
   print(data);
   print("chargé");
   print(object);
-  print(object[i].lat);
-  print(object[i].lon);
+  print(latitude);
+  print(longitude);
+
+  for (var i = 0 ; i < object.length; i++){
+    var latitude = object[i].lat;
+    var longitude = object[i].lon;
+    var texte = object[i].tags.amenity;
+
+    print(i);
+    print(latitude,longitude);
+    print(texte);
+  }
+
+   mappedX = map(latitude,0, width,45,47);
+   mappedY= map(longitude,0,height, 5, 8);
 
 
-  counter ++;
+   text(texte,mappedX,mappedY);
+   fill(255);
+       textSize(15);
+
+
+
 }
