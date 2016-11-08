@@ -11,11 +11,21 @@ function setup() {
 function draw() {
 
 
+
 }
 
 function drawData(data) {
+var object = data.elements;
+var counter = counter;
+var i ;
+  i = 0;
 
   print(data);
   print("chargé");
-print(data[104].lat)
+  print(object);
+  print(object[i].lat);
+  print(object[i].lon);
+
+
+  counter ++;
 }
