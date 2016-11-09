@@ -43,7 +43,6 @@ var mappedY;
     stroke(0);
 
 
-
   }
 
 
