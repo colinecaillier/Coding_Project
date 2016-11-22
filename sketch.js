@@ -6,6 +6,18 @@ function setup() {
     print("///Setting Up///");
     background(255);
 
+    var url1= '';
+
+    var table;
+
+  table = new p5.Table();
+
+  table.addColumn('Object');
+  table.addColumn('latitude');
+  table.addColumn('Logitude');
+
+
+
 }
 
 function draw() {
@@ -35,8 +47,12 @@ var mappedY;
     print(latitude,longitude);
     print(texte);
 
-    mappedX = map(latitude-46,0.15,0.29,0,width);
-    mappedY = map(longitude-6,0.11,0.20,0,height);
+    mappedX = map(latitude-46,0.15,0.29,0,windowWidth);
+    mappedY = map(longitude-6,0.12,0.21,0,windowHeight);
+
+
+    text(latitude,mappedX,mappedY);
+    text(longitude,mappedX-10,mappedY-10);
 
 
     ellipse(mappedX,mappedY,5,5);
@@ -45,6 +61,8 @@ var mappedY;
 
   }
 
+  var rd = random(object[i]);
+  text(rd.lat, 100, windowHeight-100);
 
 
 }
