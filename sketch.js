@@ -6,22 +6,14 @@ function setup() {
     print("///Setting Up///");
     background(255);
 
-    var url1= '';
-
-    var table;
-
-  table = new p5.Table();
-
-  table.addColumn('Object');
-  table.addColumn('latitude');
-  table.addColumn('Logitude');
-
+    var url2 ='https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=692c435838928506ce83cd600ad3ad00&lat=46.1927729+&lon=6.1580295+&radius=0.05&radius_units=km&format=json&nojsoncallback=1&auth_token=72157676874381636-fcacef57c3811591&api_sig=6b7a9a0141eb6a3e15c413fe0f972d5e'
+    loadJSON(url2,drawData2);
+    print("///Setting Up 1 ///");
 
 
 }
 
 function draw() {
-
 
 
 }
@@ -57,12 +49,15 @@ var mappedY;
 
     ellipse(mappedX,mappedY,5,5);
     stroke(0);
-
-
   }
 
-  var rd = random(object[i]);
-  text(rd.lat, 100, windowHeight-100);
+}
+
+function drawData2(data) {
+  print(data);
+  print("chargé");
+
+
 
 
 }
