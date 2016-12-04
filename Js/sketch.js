@@ -58,8 +58,8 @@ function drawData(data) {
 }
 
 function drawData2(data) {
-  print(data);
-  print("chargé");
+  //print(data);
+  //print("chargé");
 
 
 
