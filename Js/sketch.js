@@ -1,15 +1,16 @@
 function setup() {
 
+
   var map = L.map('map', {
       center: [46.2148, 6.1506],
-      zoom: 11
+      zoom: 11,
   });
 
-    background(255);
+//    background(255);
 
   //  var url ='http://bl.ocks.org/d/fdb1c8127d80efe5a0356632c96c0c4e'
     //loadJSON(url2,drawData2);
-    print("///Setting Up 1 ///");
+//    print("///Setting Up 1 ///");
 
 
 }
@@ -17,9 +18,11 @@ function setup() {
 function draw() {
 
 
+
 }
 
 function drawData(data) {
+  print(map);
 //  print(data);
 
 //
