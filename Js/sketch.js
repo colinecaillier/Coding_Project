@@ -1,10 +1,14 @@
 function setup() {
 
+  var mymap = L.map('mapid').setView([46.2148, 6.1506], 11);
 
-  var map = L.map('map', {
-      center: [46.2148, 6.1506],
-      zoom: 11,
-  });
+  L.tileLayer('https://api.mapbox.com/styles/v1/colinecaillier/ciwcn7t0f00ax2qpm7n00tcvh/tiles/256/{level}/{col}/{row}@2x?access_token=pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'your.mapbox.project.id',
+    accessToken: 'your.mapbox.public.access.token'
+}).addTo(mymap);
+
 
 //    background(255);
 
@@ -19,52 +23,10 @@ function draw() {
 
 
 
-}
-
-function drawData(data) {
-  print(map);
-//  print(data);
-
-//
-// var object = data.elements;
-// var mappedX;
-// var mappedY;
-//
-//   print(data);
-//   print("chargé");
-//   print(object);
-//   print(latitude);
-//   print(longitude);
-//
-//   for (i = 0 ; i < object.length; i++){
-//
-//     var latitude = object[i].lat;
-//     var longitude = object[i].lon;
-//
-//     var texte = object[i].tags.amenity;
-//     print(i);
-//     print(latitude,longitude);
-//     print(texte);
-//
-//     mappedX = map(latitude-46,0.15,0.29,0,windowWidth);
-//     mappedY = map(longitude-6,0.12,0.21,0,windowHeight);
-//
-//
-//     text(latitude,mappedX,mappedY);
-//     text(longitude,mappedX-10,mappedY-10);
-//
-//
-//     ellipse(mappedX,mappedY,5,5);
-//     stroke(0);
-//  }
 
 }
-
-function drawData2(data) {
-  //print(data);
-  //print("chargé");
-
-
+function onEachFeature(feature, layer) {
+  layer.bindPopup(layer.feature.properties.name);
 
 
 }
