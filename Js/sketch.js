@@ -22,9 +22,12 @@ var mapid = L.map('mapid',{
 }).setView([46.2148, 6.1506],11);
 
 var baseLayer ={
-    "Background" : Fond,
-    "Bench" : Bench
+    "Background" : Fond
 };
+
+var overlays ={
+  "Bench": Bench
+}
   //var mapid = L.map('mapid').fitWorld();
 //  map.locate({setView: true, maxZoom: 16});
 
@@ -38,10 +41,7 @@ var mapid = L.map('mapid', {
 
 print('yo im working')
 
-var maps = {
-    "Fond": Fond,
-  //  "Bench": Bench
-};
-var controlLayers = L.control.layers(maps).addTo(mapid);
+
+var controlLayers = L.control.layers(baseLayer,overlays).addTo(mapid);
 
 }
