@@ -5,11 +5,11 @@ function setup(){
 
   /// LAYERS
   var urlFond ='https://api.mapbox.com/styles/v1/colinecaillier/ciwxrg02w00092prvpgjx9a6c/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA',
-      fondAttrib = 'Mapbox fond',
+      fondAttrib = 'Background',
       urlBench='https://api.mapbox.com/styles/v1/colinecaillier/ciwlxt0ap00072qqyrdaqhl3s/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA',
-   benchAttrib = 'Mapbox Bench',
+   benchAttrib =  'Bench',
    urlStreet = 'https://api.mapbox.com/styles/v1/colinecaillier/ciwcn7t0f00ax2qpm7n00tcvh/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA',
-   Streetattrib = 'Map Geneva';
+   Streetattrib = 'map of Geneva';
 
 
   var Fond = L.tileLayer(urlFond,{
@@ -38,9 +38,8 @@ var mapid = L.map('mapid',{
   layers : [Fond]
 }).setView([46.2148, 6.1506],11);
 
-mapid.locate({setView: true, maxZoom: 22});
-
-
+L.control.locate().addTo(mapid);
+//L.control.locate(OPTIONS).addTo(mapid);
 
 
 /// controlLayers
@@ -84,18 +83,3 @@ var locacont = L.control.locate({
 
 
 // location
-
-function currentLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((function (position) {
-                var markerpos = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
-                markerpos.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
-            }));
-        } else {
-            alert("La géolocalisation n'est pas supportée par ce navigateur.");
-
-        }
-        markerpos.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
-        print(position.coords.latitude);
-        print(position.coords.longitude);
-}
