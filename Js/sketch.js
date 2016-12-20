@@ -4,10 +4,13 @@
 function setup(){
 
   /// LAYERS
-  var urlFond ='https://api.mapbox.com/styles/v1/colinecaillier/ciwcn7t0f00ax2qpm7n00tcvh/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA',
+  var urlFond ='https://api.mapbox.com/styles/v1/colinecaillier/ciwxrg02w00092prvpgjx9a6c/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA',
       fondAttrib = 'Mapbox fond',
       urlBench='https://api.mapbox.com/styles/v1/colinecaillier/ciwlxt0ap00072qqyrdaqhl3s/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA',
-   benchAttrib = 'Mapbox Bench';
+   benchAttrib = 'Mapbox Bench',
+   urlStreet = 'https://api.mapbox.com/styles/v1/colinecaillier/ciwcn7t0f00ax2qpm7n00tcvh/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA',
+   Streetattrib = 'Map Geneva';
+
 
   var Fond = L.tileLayer(urlFond,{
     attribution:fondAttrib,
@@ -17,6 +20,12 @@ function setup(){
 
   var Bench = L.tileLayer(urlBench,{
     attribution:benchAttrib ,
+        id: 'colinecaillier.ciwcossds06h62olkl109i7bz-60liw',
+        accessToken: 'pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA'
+  });
+
+  var Street = L.tileLayer(urlStreet,{
+    attribution: Streetattrib ,
         id: 'colinecaillier.ciwcossds06h62olkl109i7bz-60liw',
         accessToken: 'pk.eyJ1IjoiY29saW5lY2FpbGxpZXIiLCJhIjoiY2l3Y242eGdwMDA0YjJ0bnhraDF1NDlxMyJ9.FQLJag67Cka7KRcY-ZiKsA'
   });
@@ -41,8 +50,10 @@ var baseLayer ={
 };
 
 var overlays ={
+  "Geneva Map" : Street,
   "Bench": Bench
-}
+
+};
 
 
 //print('yo im working')
