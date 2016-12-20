@@ -35,11 +35,19 @@ function setup(){
 // Parametres globaux cartes
 
 var mapid = L.map('mapid',{
-  layers : [Fond]
+  layers : [Fond],
+  drawControl : true
 }).setView([46.2148, 6.1506],11);
 
 L.control.locate().addTo(mapid);
 //L.control.locate(OPTIONS).addTo(mapid);
+
+
+// draw
+
+
+// Draw
+
 
 
 /// controlLayers
@@ -52,6 +60,7 @@ var overlays ={
   "Geneva Map" : Street,
   "Bench": Bench
 
+
 };
 
 
@@ -60,19 +69,20 @@ var overlays ={
 
 var controlLayers = L.control.layers(baseLayer,overlays).addTo(mapid);
 
-// GRAPHIQUE
+var popup = L.popup();
 
-/*
-var locacont = L.control.locate({
-    position: 'topright',
-    strings: {
-        title: "Show me where I am, yo!"
-    }
-}).addTo(map);
-*/
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent(" " + e.latlng.toString())
+        .openOn(mapid);
+}
 
 
+mapid.on('click', onMapClick);
 
+
+///
 
 }
 
